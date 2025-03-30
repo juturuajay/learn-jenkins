@@ -2,10 +2,14 @@ pipeline {
     agent {
         label 'AGENT-1'
     }
+    options {
+        timeout(time:5, unit: "SECONDS")
+    }
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
+                sleep 10
             }
         }
         stage('Test') {
